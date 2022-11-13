@@ -1,0 +1,28 @@
+body{
+    font-family: 'Poppins', sans-serif;
+
+}
+.registation{
+    margin-top: 150px;
+}
+.form-control{
+    width: 490px;
+    height: 60px;
+}
+.btn{
+    height: 60px;
+}
+.btn-info{
+    width: 276px;
+    background-color: #36A420;
+    color: #fff;
+}
+
+.password-area{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+    right: 20px;
+    top: 22px;
+}
