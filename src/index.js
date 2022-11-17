@@ -5,11 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import firebaseConfig from './firebaseConfig';
 import 'react-toastify/dist/ReactToastify.css';
- 
+import {createBrowserRouter,RouterProvider,Route,
+} from "react-router-dom";
+import Registation from './pages/registation';
+import Login from './pages/login';
+const router = createBrowserRouter([
+  {
+    path: "/",element: <Registation/>,
+  },
+  {
+    path: "/login",element: <Login/>,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+      <RouterProvider router={router} />
   </React.StrictMode>
 );
 

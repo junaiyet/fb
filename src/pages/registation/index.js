@@ -5,9 +5,11 @@ import {AiOutlineEye,AiOutlineEyeInvisible} from "react-icons/ai"
 import { getAuth, createUserWithEmailAndPassword,sendEmailVerification  } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import { Watch } from  'react-loader-spinner'
+import { Link,useNavigate} from "react-router-dom";
 
 function Registation() {
   const auth = getAuth();
+  const navigate = useNavigate()
   const [firstname,setFirstName] = useState("")
   const [lastname,setLastName] = useState("")
   const [email,setEmail] = useState("")
@@ -77,6 +79,9 @@ function Registation() {
         setPassword("")
         sendEmailVerification(auth.currentUser)
         setLoading(false)
+        setTimeout(()=>{
+          navigate("/login")
+     },2000)
       }).catch((error) => {
           const errorCode = error.code;
           setEmailerr(error.code)
@@ -157,8 +162,7 @@ function Registation() {
           }
             <a className='text-center  d-block mb-3' href="">Forgotten password</a>
             <div className=" text-center">
-            <button className='btn btn-info'> Already Have</button>
-
+            <Link className='btn btn-info pt-3'  to={"/login"}> Already Have</Link>
             </div>
           </form>
 
